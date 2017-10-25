@@ -544,3 +544,101 @@ public class VhlSaleModel implements Serializable {
 	
 
 }
+
+
+
+
+
+
+
+package com.cmsz.security.service;
+
+import java.util.List;
+import java.util.Map;
+
+import com.cmsz.security.command.UserCommand;
+import com.cmsz.security.model.UserModel;
+
+/**
+ * 用户管理服务接口
+ * 
+ * @author wqm
+ *
+ */
+public interface UserService {
+	/**
+	 * 用户姓名检查
+	 * 
+	 * @param user
+	 * @return
+	 */
+	public Integer userNameCheck(UserModel user) throws Exception;
+	
+	/**
+	 * 用户邮件检查
+	 * 
+	 * @param user
+	 * @return
+	 */
+	public Integer userEmailCheck(UserModel user) throws Exception;
+
+	/**
+	 * 用户查询
+	 * 
+	 * @param user
+	 * @param currentPage
+	 * @param pageSize
+	 * @return
+	 */
+	public Map<String, Object> userQuery(UserModel user, int currentPage,
+			int pageSize) throws Exception;
+
+	/**
+	 * 单个用户查询
+	 * 
+	 * @param user
+	 * @return
+	 */
+	public UserModel userQuery(UserModel user) throws Exception;
+
+	/**
+	 * 所有用户查询
+	 * 
+	 * @param user
+	 * @return
+	 */
+	public List<UserModel> userQueryAll(UserCommand user) throws Exception;
+
+	/**
+	 * 用户添加
+	 * 
+	 * @param user
+	 * @return
+	 */
+	public Integer userAddition(UserModel user) throws Exception;
+
+	/**
+	 * 用户删除
+	 * 
+	 * @param user
+	 * @return
+	 */
+	public Integer userDeletion(UserModel user) throws Exception;
+
+	/**
+	 * 用户修改
+	 * 
+	 * @param user
+	 * @return
+	 */
+	public Integer userUpdate(UserModel user) throws Exception;
+
+
+}
+
+
+
+
+
+
+
