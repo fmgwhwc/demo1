@@ -1,0 +1,249 @@
+package com.dssp.profile.model;
+
+import java.io.Serializable;
+import java.util.Date;
+/**
+ * 
+ *@author GFM
+ *@date 2017年10月16日
+ *@description 车辆销售实体
+ */
+public class VhlSaleModel implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * 车辆销售记录id
+	 */
+	private String  id;
+	/**
+	 * 车架号
+	 */
+	private String vin;
+	/**
+	 * 客户姓名（车主）
+	 */
+	private String customerName;
+	/**
+	 * 客户证件类型
+	 */
+	private String credentials;
+	/**
+	 * 客户证件号码
+	 */
+	private String credentialsNum;
+	/**
+	 * 客户性别
+	 */
+	private String customerSex;
+	/**
+	 * 客户手机号码
+	 */
+	private String customerMobilePhone;
+	/**
+	 * 客户座机电话
+	 */
+	private String customerHomePhone;
+	/**
+	 * 客户邮箱
+	 */
+	private String customerEmail;
+	/**
+	 * 车辆颜色
+	 */
+	private String vhlColor;
+	/**
+	 * 车牌号
+	 */
+	private String vhlLience;
+	/**
+	 * 备注
+	 */
+	private String remark;
+	/**
+	 * 车辆状态
+	 */
+	private String vhlStatus;
+	/**
+	 * 服务等级id
+	 */
+	private String serviceLevelId;
+	/**
+	 * 保险公司
+	 */
+	private String insruanceCompany;
+	/**
+	 * 保单号
+	 */
+	private String insruanceNum;
+	/**
+	 * 保险到期日
+	 */
+	private Date dueDate;
+	/**
+	 * 销售时间
+	 */
+	private Date saleDate;
+	/**
+	 * 记录状态
+	 */
+	private String recordStatus;
+	/**
+	 * 创建时间
+	 */
+	private Date CreateTime;
+	/**
+	 * 最后更新时间
+	 */
+	private Date updateTime;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getVin() {
+		return vin;
+	}
+	public void setVin(String vin) {
+		this.vin = vin;
+	}
+	public String getCustomerName() {
+		return customerName;
+	}
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+	public String getCredentials() {
+		return credentials;
+	}
+	public void setCredentials(String credentials) {
+		this.credentials = credentials;
+	}
+	public String getCredentialsNum() {
+		return credentialsNum;
+	}
+	public void setCredentialsNum(String credentialsNum) {
+		this.credentialsNum = credentialsNum;
+	}
+	public String getCustomerSex() {
+		return customerSex;
+	}
+	public void setCustomerSex(String customerSex) {
+		this.customerSex = customerSex;
+	}
+	public String getCustomerMobilePhone() {
+		return customerMobilePhone;
+	}
+	public void setCustomerMobilePhone(String customerMobilePhone) {
+		this.customerMobilePhone = customerMobilePhone;
+	}
+	public String getCustomerHomePhone() {
+		return customerHomePhone;
+	}
+	public void setCustomerHomePhone(String customerHomePhone) {
+		this.customerHomePhone = customerHomePhone;
+	}
+	public String getCustomerEmail() {
+		return customerEmail;
+	}
+	public void setCustomerEmail(String customerEmail) {
+		this.customerEmail = customerEmail;
+	}
+	public String getVhlColor() {
+		return vhlColor;
+	}
+	public void setVhlColor(String vhlColor) {
+		this.vhlColor = vhlColor;
+	}
+	public String getVhlLience() {
+		return vhlLience;
+	}
+	public void setVhlLience(String vhlLience) {
+		this.vhlLience = vhlLience;
+	}
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+	public String getVhlStatus() {
+		return vhlStatus;
+	}
+	public void setVhlStatus(String vhlStatus) {
+		this.vhlStatus = vhlStatus;
+	}
+	public String getServiceLevelId() {
+		return serviceLevelId;
+	}
+	public void setServiceLevelId(String serviceLevelId) {
+		this.serviceLevelId = serviceLevelId;
+	}
+	public String getInsruanceCompany() {
+		return insruanceCompany;
+	}
+	public void setInsruanceCompany(String insruanceCompany) {
+		this.insruanceCompany = insruanceCompany;
+	}
+	public String getInsruanceNum() {
+		return insruanceNum;
+	}
+	public void setInsruanceNum(String insruanceNum) {
+		this.insruanceNum = insruanceNum;
+	}
+	public Date getDueDate() {
+		return dueDate;
+	}
+	public void setDueDate(Date dueDate) {
+		this.dueDate = dueDate;
+	}
+	public Date getSaleDate() {
+		return saleDate;
+	}
+	public void setSaleDate(Date saleDate) {
+		this.saleDate = saleDate;
+	}
+	public String getRecordStatus() {
+		return recordStatus;
+	}
+	public void setRecordStatus(String recordStatus) {
+		this.recordStatus = recordStatus;
+	}
+	public Date getCreateTime() {
+		return CreateTime;
+	}
+	public void setCreateTime(Date createTime) {
+		CreateTime = createTime;
+	}
+	public Date getUpdateTime() {
+		return updateTime;
+	}
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}
