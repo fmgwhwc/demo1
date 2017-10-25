@@ -642,3 +642,167 @@ public interface UserService {
 
 
 
+
+
+package com.cmsz.security.service.impl;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cmsz.security.command.UserCommand;
+import com.cmsz.security.constant.Constants;
+import com.cmsz.security.constant.TipInformation;
+import com.cmsz.security.dao.CertificateCycleDao;
+import com.cmsz.security.dao.RoleManagerDao;
+import com.cmsz.security.dao.UserDao;
+import com.cmsz.security.model.CerRemindSit;
+import com.cmsz.security.model.RoleModel;
+import com.cmsz.security.model.UserModel;
+import com.cmsz.security.service.UserService;
+
+/**
+ * 
+ * @author wqm
+ *
+ */
+@Service
+public class UserServiceImpl implements UserService {
+	@Autowired
+	private UserDao userDao;
+	/**
+	 * 证书生命周期dao
+	 */
+	@Autowired
+	private CertificateCycleDao dao;
+	@Autowired
+	private RoleManagerDao rdao;
+	
+	/**
+	 * 姓名检查
+	 * 
+	 * @throws Exception
+	 */
+	@Override
+	public Integer userNameCheck(UserModel user) throws Exception {
+		return userDao.userNameCheck(user);
+	}
+
+	/**
+	 * 邮箱检查
+	 * 
+	 * @throws Exception
+	 */
+	@Override
+	public Integer userEmailCheck(UserModel user) throws Exception {
+		return userDao.userEmailCheck(user);
+	}
+
+	/**
+	 * 查询用户
+	 */
+	@Override
+	public Map<String, Object> userQuery(UserModel user, int currentPage,
+			int pageSize) throws Exception {
+		//添加%字符转义
+		if("%".equals(user.getFullName())){
+			user.setFullName("\\%");
+		}
+		if("%".equals(user.getEmail())){
+			user.setEmail("\\%");
+		}
+		
+		Map<String, Object> result = new HashMap<String, Object>();
+		int count = userDao.userCount(user);
+		Map<String, Object> param = new HashMap<String, Object>();
+		param.put("userName", user.getUserName());
+		param.put("fullName", user.getFullName());
+		param.put("roleCode", user.getRoleCode());
+		param.put("phone", user.getPhone());
+		param.put("email", user.getEmail());
+		param.put("pageSize", pageSize);
+		param.put("currentPage", (currentPage - 1) * pageSize);
+		List<UserModel> users = userDao.userQuery(param);
+		if (users.size() > 0) {
+			result.put("data", users);
+			result.put(Constants.RESULT, Constants.SUCCESS);
+		}else{
+			result.put(Constants.RESULT, Constants.SUCCESS);
+			result.put(Constants.DATA,null);
+			result.put(Constants.MESSAGE, TipInformation.QUERY_NO_DATA);
+		}
+		result.put("totalCount", count);
+		return result;
+	}
+
+	/**
+	 * 添加用户
+	 * @throws Exception 
+	 */
+	@Override
+	public Integer userAddition(UserModel user) throws Exception {
+		return userDao.userAddition(user);
+	}
+
+	/**
+	 * 删除用户
+	 * @throws Exception 
+	 */
+	@Override
+	public Integer userDeletion(UserModel user) throws Exception {
+		user.setState(0);
+		CerRemindSit c=new CerRemindSit();
+		c.setUserName(user.getUserName());
+		//同时将证书提醒人员删除
+		dao.deleteCertificateCycleAffairs(c);
+		return userDao.userDeletion(user);
+	}
+
+	/**
+	 * 修改用户
+	 * @throws Exception 
+	 */
+	@Override
+	public Integer userUpdate(UserModel user) throws Exception {
+		//同时修改证书提醒人员信息
+		UserCommand command=new UserCommand();
+		command.setRoleCode(user.getRoleCode());
+		List<RoleModel> l=rdao.findRoleAll(command);
+		CerRemindSit cer=new CerRemindSit();
+		cer.setEmail(user.getEmail());
+		cer.setFullName(user.getFullName());
+		cer.setUserName(user.getUserName());
+		cer.setSystem(l.get(0).getRoleSystem());
+		dao.updateRemind(cer);
+		return userDao.userUpdate(user);
+	}
+
+	/**
+	 * 查询单个用户
+	 * @throws Exception 
+	 */
+	@Override
+	public UserModel userQuery(UserModel user) throws Exception {
+		return userDao.userQueryObject(user);
+	}
+
+	/**
+	 * 查询所有用户
+	 * @throws Exception 
+	 */
+	@Override
+	public List<UserModel> userQueryAll(UserCommand user) throws Exception {
+			return userDao.userQueryAll(user);
+	}
+
+}
+
+
+
+
+
+
+
