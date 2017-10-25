@@ -230,7 +230,39 @@ public class VhlSaleModel implements Serializable {
 	
 	
 	
-	
+	<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 系统事件sql语句配置 -->
+<mapper namespace="com.cmsz.security.dao.SystemEventDao">
+
+	<sql id="allSql">
+		grade,time,user,loginip,type
+	</sql>
+	<!-- 插入数据 -->
+	<insert id="addSystemEvent" parameterType="SystemEventModel">
+		insert into system_event(
+		<include refid="allSql" />
+		) values(#{grade},#{time},#{user},#{loginip},#{type})
+	</insert>
+	<!-- 查询数据 -->
+	<select id="selectSystemEvent" parameterType="SystemEventModel"
+		resultType="SystemEventModel">
+		select count(1) as count,from_unixtime(time/1000,#{timeStamp}) as
+		timeStamp from system_event
+		<where>
+			<if test="grade !=null">
+				and grade=#{grade}
+			</if>
+			<if test='startTime>0'>
+				and time &gt;= #{startTime}
+			</if>
+			<if test='endTime>0'>
+				and time &lt; #{endTime}
+			</if>
+		</where>
+		group by FROM_UNIXTIME(time/1000,#{timeStamp})
+	</select>
+</mapper>
 	
 	
 	
