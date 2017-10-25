@@ -267,7 +267,272 @@ public class VhlSaleModel implements Serializable {
 	
 	
 	
+	<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cmsz.security.dao.UserDao">
+    <!--查询用户记录数-->
+	<select id="userCount" parameterType="UserModel" resultType="Integer">
+		SELECT count(*)
+		FROM user u,role r
+		<trim prefix="WHERE" prefixOverrides="AND"> 
+			<if test="fullName != null">
+				fullName like '%${fullName}%'
+			</if>
+			<if test="roleCode != null">
+				AND u.roleCode=#{roleCode}
+			</if>
+			<if test="email != null">
+				AND email like '%${email}%'
+			</if>
+			AND r.roleCode = u.roleCode
+			AND r.roleCode != 'sa'
+			AND u.state = 1
+		</trim>
+	</select>
+	<!--用户姓名检测-->
+	<select id="userNameCheck" parameterType="UserModel" resultType="Integer">
+		SELECT count(*)
+		FROM user
+		<trim prefix="WHERE" prefixOverrides="AND"> 
+			<if test="userName != null">
+				userName=#{userName}
+			</if>
+		</trim>
+	</select>
 	
+	<!--用户邮箱检测-->
+	<select id="userEmailCheck" parameterType="UserModel" resultType="Integer">
+		SELECT count(*)
+		FROM user
+		<trim prefix="WHERE" prefixOverrides="AND"> 
+			<if test="email != null">
+				email=#{email}
+			</if>
+		</trim>
+	</select>
+
+	<!--查询所有用户-->
+	<select id="userQueryAll" resultType="UserModel" parameterType="UserCommand">
+		SELECT 
+		    u.id id,
+			userName,
+			r.roleSystem system,
+			fullName,
+			gender,
+			phone,
+			email,
+			u.createDate createDate,
+			expiredDate,
+			section,
+			r.roleType roleType,
+			u.roleCode roleCode,
+			r.roleName roleName
+		FROM user u,role r
+		<trim prefix="WHERE" prefixOverrides="AND"> 
+			r.roleCode = u.roleCode
+			AND r.roleCode != 'sa'
+			AND u.state = 1
+			<if test="roleType != null">
+			AND r.roleType=#{roleType}
+			</if>
+			<if test="roleSystem != null">
+			AND r.roleSystem=#{roleSystem}
+			</if>
+		</trim>
+	</select>
+	
+	<!--查询用户-->
+	<select id="userQuery" parameterType="Map" resultType="UserModel">
+		SELECT 
+		    u.id id,
+			userName,
+			fullName,
+			gender,
+			r.roleSystem system,
+			phone,
+			email,
+			u.createDate createDate,
+			expiredDate,
+			section,
+			r.roleType roleType,
+			u.roleCode roleCode,
+			r.roleName roleName
+		FROM user u,role r
+		<trim prefix="WHERE" prefixOverrides="AND"> 
+			<if test="fullName != null">
+				fullName like '%${fullName}%'
+			</if>
+			<if test="roleCode != null">
+				AND u.roleCode=#{roleCode}
+			</if>
+			<if test="email != null">
+				AND email like '%${email}%'
+			</if>
+			AND r.roleCode = u.roleCode
+			AND r.roleCode != 'sa'
+			AND u.state = 1
+		</trim>
+		order by u.id desc
+		limit #{currentPage},#{pageSize}
+		
+	</select>
+	<!--查询单个用户对象-->
+	<select id="userQueryObject" parameterType="UserModel" resultType="UserModel">
+		SELECT 
+		    u.id id,
+		    r.roleSystem system,
+			userName,
+			fullName,
+			gender,
+			phone,
+			email,
+			u.createDate createDate,
+			expiredDate,
+			section,
+			password,
+			r.roleType roleType,
+			u.roleCode roleCode,
+			r.roleName roleName
+		FROM user u,role r
+		<trim prefix="WHERE" prefixOverrides="AND"> 
+			<if test="userName != null">
+				userName=#{userName}
+			</if>
+			    AND r.roleCode = u.roleCode
+			    AND u.state = 1
+		</trim>
+	</select>
+	<!--修改用户-->
+	<update id="userUpdate" parameterType="UserModel">
+		UPDATE user 
+		<trim prefix="set" suffixOverrides=","> 
+			<if test="fullName != null">
+				fullName=#{fullName},
+			</if>
+			<if test="roleCode != null">
+				roleCode=#{roleCode},
+			</if>
+			<if test="phone != null">
+				phone=#{phone},
+			</if>
+			<if test="password != null">
+				password=#{password},
+			</if>
+			<if test="email != null">
+				email=#{email},
+			</if>
+			<if test="gender != null">
+				gender=#{gender},
+			</if>
+			<if test="section != null">
+				section=#{section},
+			</if>
+			<if test="expiredDate != null">
+				expiredDate=#{expiredDate}
+			</if>
+			<if test="state != null">
+				state=#{state}
+			</if>
+		</trim>
+	    <trim prefix="WHERE" prefixOverrides="AND"> 
+			<if test="userName != null">
+				userName=#{userName}
+			</if>
+		</trim>  
+	</update>
+	<!--删除用户-->
+	<delete id="userDeletion" parameterType="UserModel">
+			UPDATE user 
+		<trim prefix="set" suffixOverrides=","> 
+			<if test="state != null">
+				state=#{state}
+			</if>
+		</trim>
+	    <trim prefix="WHERE" prefixOverrides="AND"> 
+			<if test="userName != null">
+				userName=#{userName}
+			</if>
+			<if test="roleCode != null">
+				AND roleCode=#{roleCode}
+			</if>
+		</trim>  
+	</delete>
+	<!--添加用户-->
+	<insert id="userAddition" parameterType="UserModel">
+		insert
+		into
+		user
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="userName != null">
+				userName,
+			</if>
+			<if test="password != null">
+				password,
+			</if>
+			<if test="fullName != null">
+				fullName,
+			</if>
+			<if test="gender != null">
+				gender,
+			</if>
+			<if test="roleCode != null">
+				roleCode,
+			</if>
+			<if test="phone != null">
+				phone,
+			</if>
+			<if test="email != null">
+				email,
+			</if>
+			<if test="section != null">
+				section,
+			</if>
+			<if test="createDate != null">
+				createDate,
+			</if>
+			<if test="expiredDate != null">
+				expiredDate
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="userName != null">
+				#{userName},
+			</if>
+			<if test="password != null">
+				#{password},
+			</if>
+			<if test="fullName != null">
+				#{fullName},
+			</if>
+			<if test="gender != null">
+				#{gender},
+			</if>
+			<if test="roleCode != null">
+				#{roleCode},
+			</if>
+			<if test="phone != null">
+				#{phone},
+			</if>
+			<if test="email != null">
+				#{email},
+			</if>
+			<if test="section != null">
+				#{section},
+			</if>
+			<if test="createDate != null">
+				#{createDate},
+			</if>
+			<if test="expiredDate != null">
+				#{expiredDate}
+			</if>
+		</trim>
+	</insert>
+</mapper>
+
+
+
+
 	
 	
 	
