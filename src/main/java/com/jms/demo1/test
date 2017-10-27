@@ -1,808 +1,217 @@
-package com.dssp.profile.model;
+<?xml version="1.0" encoding="UTF-8"?>
 
-import java.io.Serializable;
-import java.util.Date;
-/**
- * 
- *@author GFM
- *@date 2017年10月16日
- *@description 车辆销售实体
- */
-public class VhlSaleModel implements Serializable {
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
-	 * 车辆销售记录id
-	 */
-	private String  id;
-	/**
-	 * 车架号
-	 */
-	private String vin;
-	/**
-	 * 客户姓名（车主）
-	 */
-	private String customerName;
-	/**
-	 * 客户证件类型
-	 */
-	private String credentials;
-	/**
-	 * 客户证件号码
-	 */
-	private String credentialsNum;
-	/**
-	 * 客户性别
-	 */
-	private String customerSex;
-	/**
-	 * 客户手机号码
-	 */
-	private String customerMobilePhone;
-	/**
-	 * 客户座机电话
-	 */
-	private String customerHomePhone;
-	/**
-	 * 客户邮箱
-	 */
-	private String customerEmail;
-	/**
-	 * 车辆颜色
-	 */
-	private String vhlColor;
-	/**
-	 * 车牌号
-	 */
-	private String vhlLience;
-	/**
-	 * 备注
-	 */
-	private String remark;
-	/**
-	 * 车辆状态
-	 */
-	private String vhlStatus;
-	/**
-	 * 服务等级id
-	 */
-	private String serviceLevelId;
-	/**
-	 * 保险公司
-	 */
-	private String insruanceCompany;
-	/**
-	 * 保单号
-	 */
-	private String insruanceNum;
-	/**
-	 * 保险到期日
-	 */
-	private Date dueDate;
-	/**
-	 * 销售时间
-	 */
-	private Date saleDate;
-	/**
-	 * 记录状态
-	 */
-	private String recordStatus;
-	/**
-	 * 创建时间
-	 */
-	private Date CreateTime;
-	/**
-	 * 最后更新时间
-	 */
-	private Date updateTime;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getVin() {
-		return vin;
-	}
-	public void setVin(String vin) {
-		this.vin = vin;
-	}
-	public String getCustomerName() {
-		return customerName;
-	}
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
-	public String getCredentials() {
-		return credentials;
-	}
-	public void setCredentials(String credentials) {
-		this.credentials = credentials;
-	}
-	public String getCredentialsNum() {
-		return credentialsNum;
-	}
-	public void setCredentialsNum(String credentialsNum) {
-		this.credentialsNum = credentialsNum;
-	}
-	public String getCustomerSex() {
-		return customerSex;
-	}
-	public void setCustomerSex(String customerSex) {
-		this.customerSex = customerSex;
-	}
-	public String getCustomerMobilePhone() {
-		return customerMobilePhone;
-	}
-	public void setCustomerMobilePhone(String customerMobilePhone) {
-		this.customerMobilePhone = customerMobilePhone;
-	}
-	public String getCustomerHomePhone() {
-		return customerHomePhone;
-	}
-	public void setCustomerHomePhone(String customerHomePhone) {
-		this.customerHomePhone = customerHomePhone;
-	}
-	public String getCustomerEmail() {
-		return customerEmail;
-	}
-	public void setCustomerEmail(String customerEmail) {
-		this.customerEmail = customerEmail;
-	}
-	public String getVhlColor() {
-		return vhlColor;
-	}
-	public void setVhlColor(String vhlColor) {
-		this.vhlColor = vhlColor;
-	}
-	public String getVhlLience() {
-		return vhlLience;
-	}
-	public void setVhlLience(String vhlLience) {
-		this.vhlLience = vhlLience;
-	}
-	public String getRemark() {
-		return remark;
-	}
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
-	public String getVhlStatus() {
-		return vhlStatus;
-	}
-	public void setVhlStatus(String vhlStatus) {
-		this.vhlStatus = vhlStatus;
-	}
-	public String getServiceLevelId() {
-		return serviceLevelId;
-	}
-	public void setServiceLevelId(String serviceLevelId) {
-		this.serviceLevelId = serviceLevelId;
-	}
-	public String getInsruanceCompany() {
-		return insruanceCompany;
-	}
-	public void setInsruanceCompany(String insruanceCompany) {
-		this.insruanceCompany = insruanceCompany;
-	}
-	public String getInsruanceNum() {
-		return insruanceNum;
-	}
-	public void setInsruanceNum(String insruanceNum) {
-		this.insruanceNum = insruanceNum;
-	}
-	public Date getDueDate() {
-		return dueDate;
-	}
-	public void setDueDate(Date dueDate) {
-		this.dueDate = dueDate;
-	}
-	public Date getSaleDate() {
-		return saleDate;
-	}
-	public void setSaleDate(Date saleDate) {
-		this.saleDate = saleDate;
-	}
-	public String getRecordStatus() {
-		return recordStatus;
-	}
-	public void setRecordStatus(String recordStatus) {
-		this.recordStatus = recordStatus;
-	}
-	public Date getCreateTime() {
-		return CreateTime;
-	}
-	public void setCreateTime(Date createTime) {
-		CreateTime = createTime;
-	}
-	public Date getUpdateTime() {
-		return updateTime;
-	}
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<!--
+ | This is the configuration file for Maven. It can be specified at two levels:
+ |
+ |  1. User Level. This settings.xml file provides configuration for a single user,
+ |                 and is normally provided in ${user.home}/.m2/settings.xml.
+ |
+ |                 NOTE: This location can be overridden with the CLI option:
+ |
+ |                 -s /path/to/user/settings.xml
+ |
+ |  2. Global Level. This settings.xml file provides configuration for all Maven
+ |                 users on a machine (assuming they're all using the same Maven
+ |                 installation). It's normally provided in
+ |                 ${maven.home}/conf/settings.xml.
+ |
+ |                 NOTE: This location can be overridden with the CLI option:
+ |
+ |                 -gs /path/to/global/settings.xml
+ |
+ | The sections in this sample file are intended to give you a running start at
+ | getting the most out of your Maven installation. Where appropriate, the default
+ | values (values used when the setting is not specified) are provided.
+ |
+ |-->
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <!-- localRepository
+   | The path to the local repository maven will use to store artifacts.
+   |
+   | Default: ${user.home}/.m2/repository
+  <localRepository>/path/to/local/repo</localRepository>
+  -->
+<localRepository>C:\work\mavenlib</localRepository>
+  <!-- interactiveMode
+   | This will determine whether maven prompts you when it needs input. If set to false,
+   | maven will use a sensible default value, perhaps based on some other setting, for
+   | the parameter in question.
+   |
+   | Default: true
+  <interactiveMode>true</interactiveMode>
+  -->
+
+  <!-- offline
+   | Determines whether maven should attempt to connect to the network when executing a build.
+   | This will have an effect on artifact downloads, artifact deployment, and others.
+   |
+   | Default: false
+  <offline>false</offline>
+  -->
+
+  <!-- pluginGroups
+   | This is a list of additional group identifiers that will be searched when resolving plugins by their prefix, i.e.
+   | when invoking a command line like "mvn prefix:goal". Maven will automatically add the group identifiers
+   | "org.apache.maven.plugins" and "org.codehaus.mojo" if these are not already contained in the list.
+   |-->
+
+  <!-- proxies
+   | This is a list of proxies which can be used on this machine to connect to the network.
+   | Unless otherwise specified (by system property or command-line switch), the first proxy
+   | specification in this list marked as active will be used.
+   |-->
+  <proxies>
+    <!-- proxy
+     | Specification for one proxy, to be used in connecting to the network.
+     |
+    <proxy>
+      <id>optional</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <username>proxyuser</username>
+      <password>proxypass</password>
+      <host>proxy.host.net</host>
+      <port>80</port>
+      <nonProxyHosts>local.net|some.host.com</nonProxyHosts>
+    </proxy>
+    -->
+  </proxies>
+
+  <!-- servers
+   | This is a list of authentication profiles, keyed by the server-id used within the system.
+   | Authentication profiles can be used whenever maven must make a connection to a remote server.
+   |-->
+  <servers>
+    <!-- server
+     | Specifies the authentication information to use when connecting to a particular server, identified by
+     | a unique name within the system (referred to by the 'id' attribute below).
+     |
+     | NOTE: You should either specify username/password OR privateKey/passphrase, since these pairings are
+     |       used together.
+     |
+    <server>
+      <id>deploymentRepo</id>
+      <username>repouser</username>
+      <password>repopwd</password>
+    </server>
+    -->
+
+    <!-- Another sample, using keys to authenticate.
+    <server>
+      <id>siteServer</id>
+      <privateKey>/path/to/private/key</privateKey>
+      <passphrase>optional; leave empty if not used.</passphrase>
+    </server>
+    -->
+  </servers>
+
+  <!-- mirrors
+   | This is a list of mirrors to be used in downloading artifacts from remote repositories.
+   |
+   | It works like this: a POM may declare a repository to use in resolving certain artifacts.
+   | However, this repository may have problems with heavy traffic at times, so people have mirrored
+   | it to several places.
+   |
+   | That repository definition will have a unique id, so we can create a mirror reference for that
+   | repository, to be used as an alternate download site. The mirror site will be the preferred
+   | server for that repository.
+   |-->
+  <mirrors>
+    <!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    <mirror>
+      <id>mirrorId</id>
+      <mirrorOf>repositoryId</mirrorOf>
+      <name>Human Readable Name for this Mirror.</name>
+      <url>http://my.repository.com/repo/path</url>
+    </mirror>
+     
+	 <mirror>
+        <id>nexus-aliyun</id>
+        <mirrorOf>*</mirrorOf>
+        <name>Nexus aliyun</name>
+        <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+    </mirror>
+	-->
 	
+	<mirror>
+      <id>nexus</id>
+      <mirrorOf>*</mirrorOf>
+      <name>Human Readable Name for this Mirror.</name>
+      <url>http://172.23.105.213:8081/repository/maven-public/</url>
+    </mirror>
 	
-	
-	
-	
-	
-	<?xml version="1.0" encoding="UTF-8"?>  
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- 系统事件sql语句配置 -->
-<mapper namespace="com.cmsz.security.dao.SystemEventDao">
+  </mirrors>
 
-	<sql id="allSql">
-		grade,time,user,loginip,type
-	</sql>
-	<!-- 插入数据 -->
-	<insert id="addSystemEvent" parameterType="SystemEventModel">
-		insert into system_event(
-		<include refid="allSql" />
-		) values(#{grade},#{time},#{user},#{loginip},#{type})
-	</insert>
-	<!-- 查询数据 -->
-	<select id="selectSystemEvent" parameterType="SystemEventModel"
-		resultType="SystemEventModel">
-		select count(1) as count,from_unixtime(time/1000,#{timeStamp}) as
-		timeStamp from system_event
-		<where>
-			<if test="grade !=null">
-				and grade=#{grade}
-			</if>
-			<if test='startTime>0'>
-				and time &gt;= #{startTime}
-			</if>
-			<if test='endTime>0'>
-				and time &lt; #{endTime}
-			</if>
-		</where>
-		group by FROM_UNIXTIME(time/1000,#{timeStamp})
-	</select>
-</mapper>
-	
-	
-	
-	
-	<?xml version="1.0" encoding="UTF-8"?>  
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- profiles
+   | This is a list of profiles which can be activated in a variety of ways, and which can modify
+   | the build process. Profiles provided in the settings.xml are intended to provide local machine-
+   | specific paths and repository locations which allow the build to work in the local environment.
+   |
+   | For example, if you have an integration testing plugin - like cactus - that needs to know where
+   | your Tomcat instance is installed, you can provide a variable here such that the variable is
+   | dereferenced during the build process to configure the cactus plugin.
+   |
+   | As noted above, profiles can be activated in a variety of ways. One way - the activeProfiles
+   | section of this document (settings.xml) - will be discussed later. Another way essentially
+   | relies on the detection of a system property, either matching a particular value for the property,
+   | or merely testing its existence. Profiles can also be activated by JDK version prefix, where a
+   | value of '1.4' might activate a profile when the build is executed on a JDK version of '1.4.2_07'.
+   | Finally, the list of active profiles can be specified directly from the command line.
+   |
+   | NOTE: For profiles defined in the settings.xml, you are restricted to specifying only artifact
+   |       repositories, plugin repositories, and free-form properties to be used as configuration
+   |       variables for plugins in the POM.
+   |
+   |-->
+ <pluginGroups>
+    <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+</pluginGroups>
+<profiles>
+    <profile>
+        <id>sonar</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <sonar.host.url>http://172.23.111.14:49000</sonar.host.url>
+            <sonar.login>cusc-flowctrl</sonar.login>
+            <sonar.password>cusc-flowctrl123</sonar.password>
+        </properties>
+    </profile>
+</profiles>
 
-<mapper namespace="com.cmsz.security.dao.UserDao">
-    <!--查询用户记录数-->
-	<select id="userCount" parameterType="UserModel" resultType="Integer">
-		SELECT count(*)
-		FROM user u,role r
-		<trim prefix="WHERE" prefixOverrides="AND"> 
-			<if test="fullName != null">
-				fullName like '%${fullName}%'
-			</if>
-			<if test="roleCode != null">
-				AND u.roleCode=#{roleCode}
-			</if>
-			<if test="email != null">
-				AND email like '%${email}%'
-			</if>
-			AND r.roleCode = u.roleCode
-			AND r.roleCode != 'sa'
-			AND u.state = 1
-		</trim>
-	</select>
-	<!--用户姓名检测-->
-	<select id="userNameCheck" parameterType="UserModel" resultType="Integer">
-		SELECT count(*)
-		FROM user
-		<trim prefix="WHERE" prefixOverrides="AND"> 
-			<if test="userName != null">
-				userName=#{userName}
-			</if>
-		</trim>
-	</select>
-	
-	<!--用户邮箱检测-->
-	<select id="userEmailCheck" parameterType="UserModel" resultType="Integer">
-		SELECT count(*)
-		FROM user
-		<trim prefix="WHERE" prefixOverrides="AND"> 
-			<if test="email != null">
-				email=#{email}
-			</if>
-		</trim>
-	</select>
-
-	<!--查询所有用户-->
-	<select id="userQueryAll" resultType="UserModel" parameterType="UserCommand">
-		SELECT 
-		    u.id id,
-			userName,
-			r.roleSystem system,
-			fullName,
-			gender,
-			phone,
-			email,
-			u.createDate createDate,
-			expiredDate,
-			section,
-			r.roleType roleType,
-			u.roleCode roleCode,
-			r.roleName roleName
-		FROM user u,role r
-		<trim prefix="WHERE" prefixOverrides="AND"> 
-			r.roleCode = u.roleCode
-			AND r.roleCode != 'sa'
-			AND u.state = 1
-			<if test="roleType != null">
-			AND r.roleType=#{roleType}
-			</if>
-			<if test="roleSystem != null">
-			AND r.roleSystem=#{roleSystem}
-			</if>
-		</trim>
-	</select>
-	
-	<!--查询用户-->
-	<select id="userQuery" parameterType="Map" resultType="UserModel">
-		SELECT 
-		    u.id id,
-			userName,
-			fullName,
-			gender,
-			r.roleSystem system,
-			phone,
-			email,
-			u.createDate createDate,
-			expiredDate,
-			section,
-			r.roleType roleType,
-			u.roleCode roleCode,
-			r.roleName roleName
-		FROM user u,role r
-		<trim prefix="WHERE" prefixOverrides="AND"> 
-			<if test="fullName != null">
-				fullName like '%${fullName}%'
-			</if>
-			<if test="roleCode != null">
-				AND u.roleCode=#{roleCode}
-			</if>
-			<if test="email != null">
-				AND email like '%${email}%'
-			</if>
-			AND r.roleCode = u.roleCode
-			AND r.roleCode != 'sa'
-			AND u.state = 1
-		</trim>
-		order by u.id desc
-		limit #{currentPage},#{pageSize}
-		
-	</select>
-	<!--查询单个用户对象-->
-	<select id="userQueryObject" parameterType="UserModel" resultType="UserModel">
-		SELECT 
-		    u.id id,
-		    r.roleSystem system,
-			userName,
-			fullName,
-			gender,
-			phone,
-			email,
-			u.createDate createDate,
-			expiredDate,
-			section,
-			password,
-			r.roleType roleType,
-			u.roleCode roleCode,
-			r.roleName roleName
-		FROM user u,role r
-		<trim prefix="WHERE" prefixOverrides="AND"> 
-			<if test="userName != null">
-				userName=#{userName}
-			</if>
-			    AND r.roleCode = u.roleCode
-			    AND u.state = 1
-		</trim>
-	</select>
-	<!--修改用户-->
-	<update id="userUpdate" parameterType="UserModel">
-		UPDATE user 
-		<trim prefix="set" suffixOverrides=","> 
-			<if test="fullName != null">
-				fullName=#{fullName},
-			</if>
-			<if test="roleCode != null">
-				roleCode=#{roleCode},
-			</if>
-			<if test="phone != null">
-				phone=#{phone},
-			</if>
-			<if test="password != null">
-				password=#{password},
-			</if>
-			<if test="email != null">
-				email=#{email},
-			</if>
-			<if test="gender != null">
-				gender=#{gender},
-			</if>
-			<if test="section != null">
-				section=#{section},
-			</if>
-			<if test="expiredDate != null">
-				expiredDate=#{expiredDate}
-			</if>
-			<if test="state != null">
-				state=#{state}
-			</if>
-		</trim>
-	    <trim prefix="WHERE" prefixOverrides="AND"> 
-			<if test="userName != null">
-				userName=#{userName}
-			</if>
-		</trim>  
-	</update>
-	<!--删除用户-->
-	<delete id="userDeletion" parameterType="UserModel">
-			UPDATE user 
-		<trim prefix="set" suffixOverrides=","> 
-			<if test="state != null">
-				state=#{state}
-			</if>
-		</trim>
-	    <trim prefix="WHERE" prefixOverrides="AND"> 
-			<if test="userName != null">
-				userName=#{userName}
-			</if>
-			<if test="roleCode != null">
-				AND roleCode=#{roleCode}
-			</if>
-		</trim>  
-	</delete>
-	<!--添加用户-->
-	<insert id="userAddition" parameterType="UserModel">
-		insert
-		into
-		user
-		<trim prefix="(" suffix=")" suffixOverrides="," >
-			<if test="userName != null">
-				userName,
-			</if>
-			<if test="password != null">
-				password,
-			</if>
-			<if test="fullName != null">
-				fullName,
-			</if>
-			<if test="gender != null">
-				gender,
-			</if>
-			<if test="roleCode != null">
-				roleCode,
-			</if>
-			<if test="phone != null">
-				phone,
-			</if>
-			<if test="email != null">
-				email,
-			</if>
-			<if test="section != null">
-				section,
-			</if>
-			<if test="createDate != null">
-				createDate,
-			</if>
-			<if test="expiredDate != null">
-				expiredDate
-			</if>
-		</trim>
-		<trim prefix="values (" suffix=")" suffixOverrides=",">
-			<if test="userName != null">
-				#{userName},
-			</if>
-			<if test="password != null">
-				#{password},
-			</if>
-			<if test="fullName != null">
-				#{fullName},
-			</if>
-			<if test="gender != null">
-				#{gender},
-			</if>
-			<if test="roleCode != null">
-				#{roleCode},
-			</if>
-			<if test="phone != null">
-				#{phone},
-			</if>
-			<if test="email != null">
-				#{email},
-			</if>
-			<if test="section != null">
-				#{section},
-			</if>
-			<if test="createDate != null">
-				#{createDate},
-			</if>
-			<if test="expiredDate != null">
-				#{expiredDate}
-			</if>
-		</trim>
-	</insert>
-</mapper>
-
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-}
-
-
-
-
-
-
-
-package com.cmsz.security.service;
-
-import java.util.List;
-import java.util.Map;
-
-import com.cmsz.security.command.UserCommand;
-import com.cmsz.security.model.UserModel;
-
-/**
- * 用户管理服务接口
- * 
- * @author wqm
- *
- */
-public interface UserService {
-	/**
-	 * 用户姓名检查
-	 * 
-	 * @param user
-	 * @return
-	 */
-	public Integer userNameCheck(UserModel user) throws Exception;
-	
-	/**
-	 * 用户邮件检查
-	 * 
-	 * @param user
-	 * @return
-	 */
-	public Integer userEmailCheck(UserModel user) throws Exception;
-
-	/**
-	 * 用户查询
-	 * 
-	 * @param user
-	 * @param currentPage
-	 * @param pageSize
-	 * @return
-	 */
-	public Map<String, Object> userQuery(UserModel user, int currentPage,
-			int pageSize) throws Exception;
-
-	/**
-	 * 单个用户查询
-	 * 
-	 * @param user
-	 * @return
-	 */
-	public UserModel userQuery(UserModel user) throws Exception;
-
-	/**
-	 * 所有用户查询
-	 * 
-	 * @param user
-	 * @return
-	 */
-	public List<UserModel> userQueryAll(UserCommand user) throws Exception;
-
-	/**
-	 * 用户添加
-	 * 
-	 * @param user
-	 * @return
-	 */
-	public Integer userAddition(UserModel user) throws Exception;
-
-	/**
-	 * 用户删除
-	 * 
-	 * @param user
-	 * @return
-	 */
-	public Integer userDeletion(UserModel user) throws Exception;
-
-	/**
-	 * 用户修改
-	 * 
-	 * @param user
-	 * @return
-	 */
-	public Integer userUpdate(UserModel user) throws Exception;
-
-
-}
-
-
-
-
-
-
-
-
-
-package com.cmsz.security.service.impl;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.cmsz.security.command.UserCommand;
-import com.cmsz.security.constant.Constants;
-import com.cmsz.security.constant.TipInformation;
-import com.cmsz.security.dao.CertificateCycleDao;
-import com.cmsz.security.dao.RoleManagerDao;
-import com.cmsz.security.dao.UserDao;
-import com.cmsz.security.model.CerRemindSit;
-import com.cmsz.security.model.RoleModel;
-import com.cmsz.security.model.UserModel;
-import com.cmsz.security.service.UserService;
-
-/**
- * 
- * @author wqm
- *
- */
-@Service
-public class UserServiceImpl implements UserService {
-	@Autowired
-	private UserDao userDao;
-	/**
-	 * 证书生命周期dao
-	 */
-	@Autowired
-	private CertificateCycleDao dao;
-	@Autowired
-	private RoleManagerDao rdao;
-	
-	/**
-	 * 姓名检查
-	 * 
-	 * @throws Exception
-	 */
-	@Override
-	public Integer userNameCheck(UserModel user) throws Exception {
-		return userDao.userNameCheck(user);
-	}
-
-	/**
-	 * 邮箱检查
-	 * 
-	 * @throws Exception
-	 */
-	@Override
-	public Integer userEmailCheck(UserModel user) throws Exception {
-		return userDao.userEmailCheck(user);
-	}
-
-	/**
-	 * 查询用户
-	 */
-	@Override
-	public Map<String, Object> userQuery(UserModel user, int currentPage,
-			int pageSize) throws Exception {
-		//添加%字符转义
-		if("%".equals(user.getFullName())){
-			user.setFullName("\\%");
-		}
-		if("%".equals(user.getEmail())){
-			user.setEmail("\\%");
-		}
-		
-		Map<String, Object> result = new HashMap<String, Object>();
-		int count = userDao.userCount(user);
-		Map<String, Object> param = new HashMap<String, Object>();
-		param.put("userName", user.getUserName());
-		param.put("fullName", user.getFullName());
-		param.put("roleCode", user.getRoleCode());
-		param.put("phone", user.getPhone());
-		param.put("email", user.getEmail());
-		param.put("pageSize", pageSize);
-		param.put("currentPage", (currentPage - 1) * pageSize);
-		List<UserModel> users = userDao.userQuery(param);
-		if (users.size() > 0) {
-			result.put("data", users);
-			result.put(Constants.RESULT, Constants.SUCCESS);
-		}else{
-			result.put(Constants.RESULT, Constants.SUCCESS);
-			result.put(Constants.DATA,null);
-			result.put(Constants.MESSAGE, TipInformation.QUERY_NO_DATA);
-		}
-		result.put("totalCount", count);
-		return result;
-	}
-
-	/**
-	 * 添加用户
-	 * @throws Exception 
-	 */
-	@Override
-	public Integer userAddition(UserModel user) throws Exception {
-		return userDao.userAddition(user);
-	}
-
-	/**
-	 * 删除用户
-	 * @throws Exception 
-	 */
-	@Override
-	public Integer userDeletion(UserModel user) throws Exception {
-		user.setState(0);
-		CerRemindSit c=new CerRemindSit();
-		c.setUserName(user.getUserName());
-		//同时将证书提醒人员删除
-		dao.deleteCertificateCycleAffairs(c);
-		return userDao.userDeletion(user);
-	}
-
-	/**
-	 * 修改用户
-	 * @throws Exception 
-	 */
-	@Override
-	public Integer userUpdate(UserModel user) throws Exception {
-		//同时修改证书提醒人员信息
-		UserCommand command=new UserCommand();
-		command.setRoleCode(user.getRoleCode());
-		List<RoleModel> l=rdao.findRoleAll(command);
-		CerRemindSit cer=new CerRemindSit();
-		cer.setEmail(user.getEmail());
-		cer.setFullName(user.getFullName());
-		cer.setUserName(user.getUserName());
-		cer.setSystem(l.get(0).getRoleSystem());
-		dao.updateRemind(cer);
-		return userDao.userUpdate(user);
-	}
-
-	/**
-	 * 查询单个用户
-	 * @throws Exception 
-	 */
-	@Override
-	public UserModel userQuery(UserModel user) throws Exception {
-		return userDao.userQueryObject(user);
-	}
-
-	/**
-	 * 查询所有用户
-	 * @throws Exception 
-	 */
-	@Override
-	public List<UserModel> userQueryAll(UserCommand user) throws Exception {
-			return userDao.userQueryAll(user);
-	}
-
-}
-
-
-
-
-
-
+  <!-- activeProfiles
+   | List of profiles that are active for all builds.
+   |
+  <activeProfiles>
+    <activeProfile>alwaysActiveProfile</activeProfile>
+    <activeProfile>anotherAlwaysActiveProfile</activeProfile>
+  </activeProfiles>
+  -->
+</settings>
 
