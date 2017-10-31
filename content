@@ -4,3 +4,5 @@
 	1.主流工作流引擎：activiti、jbpm5、
 	jbpm5：定位为 轻量级的可嵌入式的工作流引擎
 只有
+
+No qualifying bean of type 'com.dssp.portal.service.VhlSaleService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
